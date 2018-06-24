@@ -637,9 +637,9 @@ window.onload = function() {
 
                     if (i === 5 & workup === 5) {
 
-                        TweenMax.staggerTo($(".gridItem"), 0.3, {
+                        TweenMax.to($(".gridItem"), 0.3, {
                             opacity: 1
-                        }, 0.1);
+                        });
 
                         TweenMax.staggerFrom($(".gridItem"), 0.3, {
                             ease: Elastic.easeOut.config(0.6, 0.5),
