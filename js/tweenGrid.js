@@ -126,6 +126,12 @@ $(document).ready(function() {
 
 
 
+            var workImgSrc = $(this).children("img").attr('src').replace('thumbs', 'large');
+            $(this).children("img").attr("src", workImgSrc);
+            console.log($(this).children("img").attr('src'))
+
+
+
 
 
             TweenMax.to($(this), 0.5, { scaleX: wwr, scaleY: whr, x: centerX, y: centerY, ease: Power2.easeIn, onComplete: toCenter })
@@ -181,13 +187,6 @@ $(document).ready(function() {
         e.stopPropagation();
         return false;
     }
-
-
-
-
-
-
-
 
 
 
