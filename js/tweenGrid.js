@@ -7,7 +7,6 @@ $(document).ready(function() {
     var imageWidth = $(".gridItem").children().width();
     var imageHeight = 180;
 
-    alert(imageHeight)
 
 
     TweenMax.set($(".gridItem"), { height: imageHeight + 50 })
