@@ -24,6 +24,14 @@
         margin: 50px auto;
     }
     
+    .page {
+        display: none;
+    }
+    
+    .galdhome {
+        display: block;
+    }
+    
     .svgBackground img {
         position: relative;
         display: block;

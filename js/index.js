@@ -504,6 +504,200 @@ window.onload = function() {
 
     if ($(".navIcons").css("display") == "block") {
 
+        $(".page").css("display", "block")
+
+
+
+
+
+        var lastScrollTop = 0;
+        $(window).on('scroll', function() {
+            st = $(this).scrollTop();
+            if (st < lastScrollTop) {
+                console.log('up 1');
+            } else {
+                console.log('down 1');
+            }
+            lastScrollTop = st;
+        });
+
+
+
+        var workup = 5;
+
+
+        $(function() {
+
+
+            $.scrollify({
+                section: ".page",
+                //sectionName:false,
+                scrollSpeed: 1100,
+                after: function(i) {
+
+
+
+                    if (i === 1) {
+                        TweenMax.set($(".card"), {
+                            display: "block"
+                        });
+
+                        TweenMax.staggerTo($(".card"), 0.3, {
+                            opacity: 1
+                        }, 0.1);
+
+                        TweenMax.staggerFrom($(".card"), 1.0, {
+                            ease: Elastic.easeOut.config(1, 0.3),
+                            scale: 0,
+                        }, 0.6);
+                    } else {
+                        TweenMax.set($(".card"), {
+                            display: "none"
+                        });
+                    }
+
+                    if (i === 2) {
+
+                        TweenMax.set($(".flowBox"), {
+                            display: "block"
+                        });
+
+                        TweenMax.staggerTo($(".flowBox"), 0.3, {
+                            opacity: 1
+                        }, 0.1);
+
+                        TweenMax.staggerFrom($(".flowBox1"), 0.3, {
+                            y: window.innerHeight
+                        }, 0.2);
+
+
+                        TweenMax.staggerFrom($(".flowBox2"), 0.3, {
+                            y: -window.innerHeight
+                        }, 0.2);
+                    } else {
+                        TweenMax.set($(".flowBox"), {
+                            display: "none"
+                        });
+                    }
+
+
+                    //Video
+                    if (i === 3) {
+
+                        TweenMax.set($(".fullsize-video-bg"), {
+                            display: "block"
+                        });
+                        TweenMax.to($(".shutterUp"), 1.2, {
+                            y: -window.innerHeight,
+                        });
+                        TweenMax.to($(".shutterDown"), 1.2, {
+                            y: window.innerHeight,
+                        });
+
+                        // TweenMax.from($(".fullsize-video-bg"), 3.3, {
+                        //     scaleY: 0
+                        // });
+                    } else {
+                        // TweenMax.to($(".shutterUp"), 1.2, {
+                        //     y: 0,
+                        // });
+                        // TweenMax.to($(".shutterDown"), 1.2, {
+                        //     y: 0,
+                        // });
+
+                        // TweenMax.set($(".fullsize-video-bg"), {
+                        //     display: "none"
+                        // });
+                    }
+
+                    //Team
+                    if (i === 4) {
+
+                        TweenMax.set($(".cicleSlides li"), {
+                            display: "block"
+                        });
+                        TweenMax.to($(".cicleSlides li"), 0.3, {
+                            opacity: 1
+                        });
+
+                        TweenMax.staggerFrom($(".cicleSlides li"), 0.3, {
+                            scale: 0
+                        }, 0.1);
+
+                    } else {
+
+                        TweenMax.set($(".cicleSlides li"), {
+                            display: "none"
+                        });
+                    }
+
+
+
+
+
+                    if (i === 5 & workup === 5) {
+
+                        TweenMax.staggerTo($(".gridItem"), 0.3, {
+                            opacity: 1
+                        }, 0.1);
+
+                        TweenMax.staggerFrom($(".gridItem"), 0.3, {
+                            ease: Elastic.easeOut.config(0.6, 0.5),
+                            y: window.innerHeight,
+                        }, 0.1);
+                    } else {
+                        // TweenMax.to($(".gridItem"), 0.3, {
+                        //     opacity: 0
+                        // });
+                    }
+
+
+
+                    if (i === 6) {
+
+                        workup = 6
+                    } else {
+
+                        workup = 5
+
+                    }
+
+
+
+
+                }
+            });
+
+            $(".scroll,.scroll-btn").click(function(e) {
+                e.preventDefault();
+
+                $.scrollify.next();
+
+
+
+            });
+
+
+            var hasHovered = false;
+            $(".coffee").on("mouseenter focus", function() {
+                if (hasHovered === false) {
+                    ga('send', 'event', 'Coffee', 'hover', 'Buy me a coffee');
+                    hasHovered = true;
+                }
+            });
+
+        });
+
+
+
+
+
+
+
+
+
+
+
 
         var caseSlider = document.querySelector('.sliderCont');
         var caseImg = caseSlider.querySelectorAll('img');
@@ -511,6 +705,17 @@ window.onload = function() {
             var imgSrc = caseImg[i].getAttribute('src').replace('small', 'large');
             caseImg[i].setAttribute("src", imgSrc);
         }
+
+
+
+
+
+
+
+
+
+
+
     }
 
 
