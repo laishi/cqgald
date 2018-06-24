@@ -500,15 +500,17 @@ window.onload = function() {
 
     $(".navIcons").css("display", "block");
 
-    TweenMax.to(".navHome", 3, { attr: { keyPoints: '0.33;0.33' }, ease: Elastic.easeOut.config(1, 0.3), y: -500 });
-    TweenMax.to(".navTeam", 3, { attr: { keyPoints: '0.41;0.41' }, ease: Elastic.easeOut.config(1, 0.3), y: -500 });
-    TweenMax.to(".navWork", 3, { attr: { keyPoints: '0.59;0.59' }, ease: Elastic.easeOut.config(1, 0.3), y: -500 });
-    TweenMax.to(".navContact", 3, { attr: { keyPoints: '0.67;0.67' }, ease: Elastic.easeOut.config(1, 0.3), y: -500 });
+
 
     if ($(".navIcons").css("display") == "block") {
-        var sliderImgSrc = $(".sliderImg").children("img").attr('src').replace('small', 'large');
-        $(".sliderImg").children("img").attr("src", sliderImgSrc);
-        console.log($(".sliderImg").children("img").attr('src'))
+
+
+        var caseSlider = document.querySelector('.sliderCont');
+        var caseImg = caseSlider.querySelectorAll('img');
+        for (var i = 0; i < caseImg.length; i++) {
+            var imgSrc = caseImg[i].getAttribute('src').replace('small', 'large');
+            caseImg[i].setAttribute("src", imgSrc);
+        }
     }
 
 
