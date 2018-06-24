@@ -504,9 +504,6 @@ window.onload = function() {
 
     if ($(".navIcons").css("display") == "block") {
 
-        $(".page").css("display", "block")
-
-
 
 
 

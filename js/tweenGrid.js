@@ -5,7 +5,7 @@ $(document).ready(function() {
 
     var gridItemWidth = $(".gridItem").width();
     var imageWidth = $(".gridItem").children().width();
-    var imageHeight = 180;
+    var imageHeight = $(".gridItem").children().height();
 
 
 
