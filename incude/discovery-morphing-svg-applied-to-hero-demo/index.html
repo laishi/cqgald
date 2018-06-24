@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>Discovery: Morphing SVG applied to Hero Demo</title>
+  
+  
+  <link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Nunito:300,700'>
+
+      <link rel="stylesheet" href="css/style.css">
+
+  
+</head>
+
+<body>
+
+  <!-- 
+Methods: SVG Clip vs Basic Shape clip 
+ - negative values are invalid for circle radius
+ - clip-path animations MUST have the same number of points
+ - clippathSVGS cant be wrapped in <g> tags
+
+Final result using SnapSVG
+-->
+
+<main class="container">
+  <div class='hero'>  
+    <svg id="curves" x="0px" y="0px" width="794px" height="137px" viewBox="4 -85 794 137" preserveAspectRatio="xMidYMid">
+      <path class="curve-base" d="M798,59.5H4v-9.667C4,49.833,206,7.5,401,7.5c212.5,0,397,41.667,397,41.667V59.5z"/>
+      <path class="curve-inverse" d="M798,59.5H4L3.866-47.624c0,0,203.139,54.664,398.139,54.664c212.501,0,395.861-54.664,395.861-54.664L798,59.5z"/>
+    </svg>
+  </div>
+
+
+  <section class='content'>
+    <h2 class='content-heading'>Major Keys to Success</h2>
+    <p><a class='action-link' href='http://khaledipsum.com/' target='_blank'>Get your own Khaled Ipsum</a></p>
+    <p>The other day the grass was brown, now it’s green because I ain’t give up. Never surrender. I told you all this before, when you have a swimming pool, do not use chlorine, use salt water, the healing, salt water is the healing. How’s business? Boomin. Watch your back, but more importantly when you get out the shower, dry your back, it’s a cold world out there. Major key.</p>
+  </section>
+</main>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/snap.svg/0.5.1/snap.svg-min.js'></script>
+
+  
+
+    <script  src="js/index.js"></script>
+
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,67 @@
+.curve-inverse {
+  opacity: 0;
+}
+
+svg {
+  height: auto;
+  width: auto;
+  max-width: 100%;
+}
+
+body {
+  background-color: #0c0c0e;
+  color: #ffffff;
+  font-family: 'Nunito', sans-serif;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+.hero {
+  background: #0b3643 url("https://images.unsplash.com/photo-1475518845976-0fd87b7e4e5d?auto=format&fit=crop&w=1440") no-repeat bottom center;
+  background-size: cover;
+  max-height: 600px;
+  min-height: 300px;
+  position: relative;
+}
+.hero svg {
+  bottom: 0;
+  left: 0;
+  max-width: 100%;
+  width: 100%;
+  position: absolute;
+}
+.hero svg path {
+  fill: #ffffff;
+}
+
+.content {
+  background: #ffffff;
+  color: #0c0c0e;
+  font-size: 1rem;
+  padding: 0 20px 60px;
+}
+
+.content-heading {
+  margin-top: 0;
+}
+
+.content-heading,
+.action-link {
+  text-align: center;
+}
+
+.action-link {
+  color: #0c0c0e;
+  font-weight: bold;
+  text-decoration: none;
+}
+.action-link::after {
+  content: '>';
+  padding-left: 7px;
+}
+.action-link:hover, .action-link:focus {
+  color: #6ac140;
+}

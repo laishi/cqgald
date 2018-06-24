@@ -1,0 +1,89 @@
+.mixGrids {
+    position: relative;
+    /* padding: 2% 0 2% 0; */
+    text-align: justify;
+    /* background: #186a77; */
+    left: 0;
+    overflow: hidden;
+    color: #ccc;
+}
+
+.gridImg {
+    position: relative;
+    /* top: -80px; */
+    width: 100%;
+    /* height: 80%; */
+    background-color: red;
+    margin: 0 auto;
+    border-radius: 100%;
+    background-image: url(../images/large/1.jpg);
+    background-size: contain;
+    background-position: center;
+    transition: .3s cubic-bezier(.3, 0, 0, 1.3)
+}
+
+.gridIcons .iconMiddle {
+    background-color: deeppink;
+}
+
+.mixGrids img {
+    width: 100%;
+}
+
+
+/* .gridImg:hover {
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+} */
+
+.mixGrids .gridItem {
+    box-shadow: 0 0 10px 2px rgba(0, 0, 0, .4);
+}
+
+.mixGrids .gridItem,
+.mixGrids .gap {
+    display: inline-block;
+    width: 49%;
+    cursor: pointer;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.mixGrids .gridItem {
+    text-align: left;
+    background: #1f1f1f;
+    /* margin-top: 10px; */
+    margin-bottom: 20px;
+    height: 200px;
+    overflow: hidden;
+    /* border-radius: 5px; */
+    /*display: none; <-- uncomment this rule for use with MixItUp */
+}
+
+.mixGrid {
+    margin: 50px 0;
+}
+
+@media all and (min-width: 320px) {
+    .mixGrids .gridItem,
+    .mixGrids .gap {
+        width: 49%;
+    }
+}
+
+@media all and (min-width: 960px) {
+    .mixGrids .gridItem,
+    .mixGrids .gap {
+        width: 32%;
+    }
+}
+
+@media all and (min-width: 1280px) {
+    .mixGrids .gridItem,
+    .mixGrids .gap {
+        width: 23.5%;
+        /* position: absolute; */
+    }
+}
