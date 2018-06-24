@@ -46,7 +46,6 @@
 .mixGrids .gridItem,
 .mixGrids .gap {
     display: inline-block;
-    height: 320px;
     width: 49%;
     cursor: pointer;
     text-align: center;
