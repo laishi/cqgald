@@ -26,7 +26,24 @@ $(document).ready(function() {
     var recenterX;
     var recenterY;
 
-    $(".gridItem").click(function() {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    $(".gridItem").click(function(index, item) {
+
+
+        cg = $(this);
 
 
 
@@ -90,6 +107,8 @@ $(document).ready(function() {
 
 
 
+
+
         if ($(this).hasClass("action")) {
 
             gridMove(prevGrid, WH * 1.5, "+=", Power2.easeOut);
@@ -114,6 +133,11 @@ $(document).ready(function() {
 
         } else {
 
+
+
+
+
+
             sourceGridX = gridX;
             sourceGridY = gridY;
 
@@ -126,10 +150,20 @@ $(document).ready(function() {
             gridMove(nextGrid, WH * 1.5, "+=", Power2.easeIn);
 
 
+            console.log($(".mixGrid").find("img"))
+
+            $.each($(".mixGrid").find("img"), function(key, value) {
+                console.log(key + ": " + value.src);
+            });
+
+
 
             var workImgSrc = $(this).children("img").attr('src').replace('thumbs', 'large');
             $(this).children("img").attr("src", workImgSrc);
-            console.log($(this).children("img").attr('src'))
+
+
+
+
 
 
 

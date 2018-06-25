@@ -76,7 +76,6 @@
 
     var svgMaxHeight = svgBaseHeight + changeCurver;
 
-    console.log("svgMaxHeight: " + svgMaxHeight)
 
 
 
@@ -177,7 +176,6 @@
         TweenMax.to(".navContact", 3, { attr: { keyPoints: '0.67;0.67' }, ease: Elastic.easeOut.config(1, 0.3), y: -500 });
 
 
-        console.log("svgMaxHeight: " + svgMaxHeight)
 
 
 
@@ -189,7 +187,6 @@
 
             var svgHeight = parseInt(curve.getAttribute("d").split(" ")[2]); //479
 
-            console.log("svgScrollH: " + svgScrollH);
 
 
             curveValue = svgScrollH - parseFloat(scrollPos * curveRate);
@@ -226,7 +223,6 @@
 
             var logoPath = "path('M 0,700 Q 960 " + curveValue + " 1920 700')";
 
-            console.log("svgHeight: " + curveValue)
 
             TweenMax.to($(".sliders"), 1, { height: curveValue });
 
@@ -507,16 +503,7 @@ window.onload = function() {
 
 
 
-        var lastScrollTop = 0;
-        $(window).on('scroll', function() {
-            st = $(this).scrollTop();
-            if (st < lastScrollTop) {
-                console.log('up 1');
-            } else {
-                console.log('down 1');
-            }
-            lastScrollTop = st;
-        });
+
 
 
 
@@ -690,28 +677,15 @@ window.onload = function() {
 
 
 
-
-
-
-
-
-
         var caseSlider = document.querySelector('.sliderCont');
-        var caseImg = caseSlider.querySelectorAll('img');
+        var caseImg = caseSlider.querySelectorAll('.sliderImg');
+
         for (var i = 0; i < caseImg.length; i++) {
-            var imgSrc = caseImg[i].getAttribute('src').replace('small', 'large');
-            caseImg[i].setAttribute("src", imgSrc);
+            var imgSrc = caseImg[i].style.backgroundImage.replace('small', 'large');
+            console.log(imgSrc);
+            caseImg[i].style.backgroundImage = imgSrc;
+
         }
-
-
-
-
-
-
-
-
-
-
 
     }
 

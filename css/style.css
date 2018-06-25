@@ -164,9 +164,17 @@
         z-index: 10000;
     }
     
+    .sliderImg {
+        position: relative;
+        width: 100%;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+    
     .sliderImg img {
         position: relative;
-        height: 100%;
+        /* height: 100%; */
     }
     
     .galdhome h3 {
@@ -667,7 +675,8 @@
     }
     
     .galdwork {
-        background-color: rgb(255, 255, 255)
+        background-color: rgb(255, 255, 255);
+        /* overflow: hidden; */
     }
     
     .galdcontent {
