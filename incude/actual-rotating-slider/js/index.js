@@ -3,8 +3,8 @@
 		    /* Settings */
 		    var rotateSlider = {
 		        slideHeight: window.innerHeight / 3,
-		        slideWidth: window.innerWidth / 3,
-		        setTime: 4000
+		        slideWidth: window.innerWidth / 4,
+		        setTime: 3000
 		    };
 
 		    /* Do Math and set properties */

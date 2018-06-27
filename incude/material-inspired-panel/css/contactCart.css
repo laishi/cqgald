@@ -38,7 +38,7 @@
     margin-top: -130px;
 }
 
-h2 {
+.galdcontact h2 {
     text-align: center;
     margin-top: 53vh;
     position: absolute;
@@ -49,7 +49,7 @@ h2 {
     font-family: 'Noto Sans', serif;
 }
 
-h2 small {
+.galdcontact h2 small {
     font-weight: normal;
     font-size: 65%;
     color: rgba(0, 0, 0, 0.5);

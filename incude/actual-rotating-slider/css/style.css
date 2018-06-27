@@ -37,7 +37,7 @@ body {
 
 .rotate-slider ul.cicleSlides li {
     background-position: center;
-    background-size: cover;
+    background-size: contain;
     background-repeat: no-repeat;
     display: block;
     color: #fff;
@@ -50,6 +50,10 @@ body {
     transform-origin: bottom center;
     width: 100%;
     background: #f12;
+}
+
+.rotate-slider ul.cicleSlides li h2 {
+    font-size: 32px;
 }
 
 .rotate-slider ul.cicleSlides li:nth-of-type(1) {
