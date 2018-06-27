@@ -476,60 +476,6 @@
         width: 330px;
     }
     
-    .card_circle {
-        height: 450px;
-        width: 100%;
-        background-color: #2196F3;
-        position: absolute;
-        border-radius: 50%;
-        margin-left: -75px;
-        margin-top: -270px;
-    }
-    
-    .flowCard:hover .card_circle {
-        border-radius: 0;
-        margin-top: -130px;
-    }
-    
-    h2 small {
-        font-weight: normal;
-        font-size: 65%;
-        color: rgba(0, 0, 0, 0.5);
-    }
-    
-    .card:hover h2 {
-        margin-top: 100px;
-        color: #fff;
-    }
-    
-    .card:hover h2 small {
-        color: #fff;
-    }
-    
-    .cta-container {
-        text-align: center;
-        margin-top: 290px;
-        position: absolute;
-        z-index: 9999;
-        width: 100%;
-        font-family: 'Noto Sans', serif;
-    }
-    
-    .cta {
-        color: #fff;
-        border: 2px solid #2196F3;
-        background-color: #2196F3;
-        padding: 10px 25px;
-        border-radius: 50px;
-        font-size: 17px;
-        text-decoration: none;
-        font-weight: bold;
-    }
-    
-    .card:hover .cta-container {
-        margin-top: 320px;
-    }
-    
     .cicleTitle {
         position: absolute;
         text-align: center;
@@ -646,6 +592,19 @@
     .galdVideo .fullsize-video-bg {
         display: none;
         opacity: 1;
+    }
+    
+    .lightingVideo {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        min-width: 100%;
+        min-height: 100%;
+        width: auto;
+        height: auto;
+        z-index: -100;
+        -webkit-transform: translateX(-50%) translateY(-50%);
+        transform: translateX(-50%) translateY(-50%);
     }
     
     .gridItem h3 {

@@ -3,7 +3,7 @@
 		    /* Settings */
 		    var rotateSlider = {
 		        slideHeight: window.innerHeight / 3,
-		        slideWidth: window.innerWidth / 5,
+		        slideWidth: window.innerWidth / 3,
 		        setTime: 4000
 		    };
 
@@ -73,6 +73,7 @@
 		    /* Set Interval to rotate */
 		    var currentRotation = 0;
 		    var rotateInterval = window.setInterval(cicleRotate, rotateSlider.setTime);
+
 		    function cicleRotate() {
 		        var d = new Date();
 		        $(".cicleInfo").html(d.toLocaleTimeString());
