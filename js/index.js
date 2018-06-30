@@ -318,28 +318,6 @@ $(document).ready(function() {
 
 
 
-    /*EXPAND owlItemW INIT*/
-
-    var n = $(".flowBox").length; // Div count
-    var OW = 38; // Div over width
-    TweenMax.set($(".flowBox"), { width: 100 / n + '%' });
-    $(".flowBox").hover(over, out);
-
-    function over(item, index) {
-        console.log($(this).index)
-        TweenMax.to($(this), 0.3, { width: OW + '%' });
-        TweenMax.to($(this).find(".flowBoxTitle"), 0.3, { y: (window.innerHeight / 2 - 200) * -0.5 - 50 });
-        TweenMax.to($(this).find(".flowBoxText"), 0.3, { y: -100 });
-        TweenMax.to($(this).find("h3"), 0.3, { opacity: 0 });
-        TweenMax.to($(this).siblings(), 0.3, { width: (100 - OW) / (n - 1) + '%' })
-    }
-
-    function out() {
-        TweenMax.to($(this).find(".flowBoxTitle"), 0.3, { y: 0 });
-        TweenMax.to($(this).find(".flowBoxText"), 0.3, { y: 0 });
-        TweenMax.to($(this).find("h3"), 0.3, { opacity: 1 });
-        TweenMax.to($(".flowBox"), 0.3, { width: 100 / n + '%', ease: Back.easeOut })
-    }
 
 
 
@@ -485,6 +463,39 @@ $(document).ready(function() {
 
 
     // ICON
+
+
+    //WORKFLOW
+
+    if (window.innerWidth < 960) {
+
+
+
+    } else {
+        /*EXPAND owlItemW INIT*/
+
+        var n = $(".flowBox").length; // Div count
+        var OW = 38; // Div over width
+        TweenMax.set($(".flowBox"), { width: 100 / n + '%' });
+        $(".flowBox").hover(over, out);
+
+        function over(item, index) {
+            console.log($(this).index)
+            TweenMax.to($(this), 0.3, { width: OW + '%' });
+            TweenMax.to($(this).find(".flowBoxTitle"), 0.3, { y: (window.innerHeight / 2 - 200) * -0.5 - 50 });
+            TweenMax.to($(this).find(".flowBoxText"), 0.3, { y: -100 });
+            TweenMax.to($(this).find("h3"), 0.3, { opacity: 0 });
+            TweenMax.to($(this).siblings(), 0.3, { width: (100 - OW) / (n - 1) + '%' })
+        }
+
+        function out() {
+            TweenMax.to($(this).find(".flowBoxTitle"), 0.3, { y: 0 });
+            TweenMax.to($(this).find(".flowBoxText"), 0.3, { y: 0 });
+            TweenMax.to($(this).find("h3"), 0.3, { opacity: 1 });
+            TweenMax.to($(".flowBox"), 0.3, { width: 100 / n + '%', ease: Back.easeOut })
+        }
+
+    }
 
 
 
