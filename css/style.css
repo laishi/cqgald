@@ -400,6 +400,11 @@
         text-align: center;
     }
     
+    .logoImg img {
+        width: auto;
+        height: 100%;
+    }
+    
     #workflowCont {
         height: 100%;
         padding: 0px;
@@ -723,4 +728,15 @@
         padding-top: 4px;
         white-space: -moz-pre-wrap;
         word-wrap: break-word;
+    }
+    
+    @media all and (max-width: 512px) {
+        .logoImg img {
+            width: 100%;
+            height: auto;
+        }
+        .bgcont {
+            width: 80%;
+            height: auto;
+        }
     }

@@ -83,10 +83,8 @@
     font-size: 17px;
     text-decoration: none;
     font-weight: bold;
-    float: left;
     width: 80%;
-    margin: 10px;
-    left: 10%;
+    margin: 5px auto;
     position: relative;
 }
 

@@ -659,8 +659,8 @@ window.onload = function() {
 
                         TweenMax.staggerFrom($(".gridItem"), 0.3, {
                             ease: Elastic.easeOut.config(0.6, 0.5),
-                            y: window.innerHeight,
-                        }, 0.1);
+                            scale: 0,
+                        }, 0.05);
                     } else {
                         // TweenMax.to($(".gridItem"), 0.3, {
                         //     opacity: 0
