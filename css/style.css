@@ -730,6 +730,10 @@
         word-wrap: break-word;
     }
     
+    .bdmap {
+        opacity: 0.5;
+    }
+    
     @media all and (max-width: 512px) {
         .logoImg img {
             width: 100%;
