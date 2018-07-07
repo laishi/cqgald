@@ -127,6 +127,13 @@
 
         initSvg()
 
+        if (window.width >= 1024) {
+            var n = $(".flowBox").length; // Div count
+            var OW = 38; // Div over width
+            TweenMax.set($(".flowBox"), { width: 100 / n + '%' });
+
+        }
+
 
 
         // headerHeight = curve.getBoundingClientRect().height;
@@ -467,7 +474,7 @@ $(document).ready(function() {
 
     //WORKFLOW
 
-    if (window.innerWidth < 960) {
+    if (window.innerWidth < 1024) {
 
 
 

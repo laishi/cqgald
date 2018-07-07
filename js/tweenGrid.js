@@ -59,6 +59,9 @@ $(document).ready(function() {
         var wwr = 720 / imageWidth;
         var whr = 400 / imageHeight;
 
+        var csw = imageWidth / 720;
+        var csh = imageHeight / 400;
+
 
 
         var gridX = $(this).offset().left;
@@ -170,9 +173,14 @@ $(document).ready(function() {
 
 
 
-
             TweenMax.to($(this), 0.5, { scaleX: wwr, scaleY: whr, x: centerX, y: centerY, ease: Power2.easeIn, onComplete: toCenter })
-                // TweenMax.to(currentItem.children(), 0.1, { scaleX: 1 / (WW * 0.8 / gridW), scaleY: 1 / (WH * 0.8 / gridH), ease: Power2.easeIn })
+
+
+            TweenMax.to($(this).children(".gridCicle"), 0.5, { scale: 0.5 })
+            TweenMax.to($(this).children(".gridText"), 0.5, { scale: 0.5 })
+
+
+            // TweenMax.to(currentItem.children(), 0.1, { scaleX: 1 / (WW * 0.8 / gridW), scaleY: 1 / (WH * 0.8 / gridH), ease: Power2.easeIn })
 
 
             $('.fp-scroller').on('scroll mousewheel touchmove', stopScrolling);
