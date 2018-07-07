@@ -9,13 +9,15 @@ $(document).ready(function() {
 
 
 
-    TweenMax.set($(".gridItem"), { height: imageHeight + 50 })
+    TweenMax.set($(".gridItem"), { height: imageHeight + imageHeight / 2 })
         // TweenMax.set($(".gridImg"), { height: gridItemWidth })
 
 
+    var gridCicleR = $(".gridCicle").height();
 
-
-
+    TweenMax.set($(".gridCicle"), { top: imageHeight - gridCicleR / 2, left: imageWidth - gridCicleR * 2 })
+    TweenMax.set($(".gridText"), { height: imageHeight / 2 })
+    TweenMax.set($(".gridText h3"), { "lineHeight": $(".gridText").height() + "px" })
 
 
 
