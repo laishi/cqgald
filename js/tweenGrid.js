@@ -3,21 +3,97 @@ $(document).ready(function() {
 
 
 
+
+
+
     var gridItemWidth = $(".gridItem").width();
     var imageWidth = $(".gridItem").children().width();
-    var imageHeight = $(".gridItem").children().height();
+    var imageHeight = $(".gridItemImg").height();
 
 
 
-    TweenMax.set($(".gridItem"), { height: imageHeight + imageHeight / 2 })
-        // TweenMax.set($(".gridImg"), { height: gridItemWidth })
+
+    // TweenMax.set($(".gridItem"), { height: imageHeight + imageHeight / 2 })
+    // TweenMax.set($(".gridImg"), { height: gridItemWidth })
 
 
     var gridCicleR = $(".gridCicle").height();
 
     TweenMax.set($(".gridCicle"), { top: imageHeight - gridCicleR / 2, left: imageWidth - gridCicleR * 2 })
+
+
+
     TweenMax.set($(".gridText"), { height: imageHeight / 2 })
-    TweenMax.set($(".gridText h3"), { "lineHeight": $(".gridText").height() + "px" })
+    TweenMax.set($(".gridText h3"), { "lineHeight": imageHeight / 2 + "px" })
+
+
+
+
+    // var d = new Date();
+    // var n = d.getSeconds();
+    // var times = -1;
+
+    // setInterval(function() {
+
+    //     TweenMax.to($("img"), 0.3, { y: imageHeight * times });
+
+    //     if (times === 0) {
+    //         times = -1
+    //     } else {
+    //         times = 0
+    //     }
+
+
+
+
+    // }, Math.random(n) * 5000);
+
+
+
+
+
+    $(".gridItemImgs").each(function(index) {
+        console.log(index + ": " + $(this));
+
+
+
+        var imgNum = $(this).children("img").length;
+
+
+
+
+        console.log(imgNum);
+        $(this).siblings(".gridCicle").html(imgNum)
+    });
+
+
+
+
+
+    TweenMax.set($(".gridItemImgs"), { height: imageHeight })
+
+
+
+    $(".gridItem").hover(imgin, imgout);
+
+    function imgin() {
+        TweenMax.to($(this).find("img"), 0.3, { y: -imageHeight });
+        TweenMax.to($(this).children(".gridItemImgs"), 0.3, { opacity: 1.0 });
+        TweenMax.set($(this), { "background-color": "#2196f3" });
+    }
+
+
+
+    function imgout() {
+        TweenMax.to($(this).find("img"), 0.3, { y: 0 });
+        TweenMax.to($(this).children(".gridItemImgs"), 0.3, { opacity: 0.8 });
+        TweenMax.set($(this), { "background-color": "#232322" });
+    }
+
+
+
+
+
 
 
 
@@ -56,8 +132,16 @@ $(document).ready(function() {
         var WH = $(window).innerHeight();
 
 
-        var wwr = 720 / imageWidth;
-        var whr = 400 / imageHeight;
+        var fixGridW = 720;
+
+
+        if (window.innerWidth < 720) {
+            fixGridW = window.innerWidth - 50
+        }
+        var fixGridH = fixGridW * 0.58;
+
+        var wwr = fixGridW / imageWidth;
+        var whr = fixGridH / imageHeight;
 
         var csw = imageWidth / 720;
         var csh = imageHeight / 400;
@@ -76,7 +160,6 @@ $(document).ready(function() {
 
 
 
-        // alert($(this).parent(".page"))
 
 
 
@@ -119,7 +202,7 @@ $(document).ready(function() {
             gridMove(prevGrid, WH * 1.5, "+=", Power2.easeOut);
             gridMove(nextGrid, WH * 1.5, "-=", Power2.easeOut);
 
-            $('.fp-scroller').off('scroll mousewheel touchmove', stopScrolling);
+            // $('.fp-scroller').off('scroll mousewheel touchmove', stopScrolling);
 
             $(this).removeClass("action")
 
@@ -155,16 +238,29 @@ $(document).ready(function() {
             gridMove(nextGrid, WH * 1.5, "+=", Power2.easeIn);
 
 
-            console.log($(".mixGrid").find("img"))
 
-            $.each($(".mixGrid").find("img"), function(key, value) {
-                console.log(key + ": " + value.src);
+
+            var replaceImg = $(this).children(".gridItemImgs").children()
+
+
+
+
+
+
+
+            $.each(replaceImg, function(key, element) {
+                console.log(key)
+                console.log($(this).attr('src'))
+
+                var workImgSrc = $(this).attr('src').replace('thumbs', 'large');
+                $(this).attr("src", workImgSrc);
+
             });
 
 
 
-            var workImgSrc = $(this).children("img").attr('src').replace('thumbs', 'large');
-            $(this).children("img").attr("src", workImgSrc);
+
+
 
 
 
@@ -176,14 +272,14 @@ $(document).ready(function() {
             TweenMax.to($(this), 0.5, { scaleX: wwr, scaleY: whr, x: centerX, y: centerY, ease: Power2.easeIn, onComplete: toCenter })
 
 
-            TweenMax.to($(this).children(".gridCicle"), 0.5, { scale: 0.5 })
-            TweenMax.to($(this).children(".gridText"), 0.5, { scale: 0.5 })
+            TweenMax.to($(this).children(".gridCicle"), 0.5, { scale: 0.8 })
+            TweenMax.to($(this).children(".gridText"), 0.5, { scale: 0.8 })
 
 
             // TweenMax.to(currentItem.children(), 0.1, { scaleX: 1 / (WW * 0.8 / gridW), scaleY: 1 / (WH * 0.8 / gridH), ease: Power2.easeIn })
 
 
-            $('.fp-scroller').on('scroll mousewheel touchmove', stopScrolling);
+            // $('.fp-scroller').on('scroll mousewheel touchmove', stopScrolling);
             $(this).addClass("action")
 
 

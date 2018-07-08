@@ -39,8 +39,48 @@
 } */
 
 .mixGrids .gridItem {
+    position: relative;
+    overflow: hidden;
     box-shadow: 0 0 10px 2px rgba(0, 0, 0, .4);
     /* opacity: 0; */
+}
+
+.mixGrids .gridItemImgs {
+    width: 100%;
+    height: 250px;
+    background-color: #232322;
+    overflow: hidden;
+    opacity: 0.3;
+}
+
+.mixGrids .gridItem .gridItemImg {
+    position: relative;
+    float: left;
+}
+
+.gridItem .gridCicle {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    background-color: #2196f3;
+    border-radius: 100%;
+    line-height: 24px;
+    color: #ccc;
+    font-size: 12px;
+    text-align: center;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.gridItem .gridText {
+    position: relative;
+    text-align: center;
+    width: 100%;
+    /* background-color: rgb(37, 53, 199); */
+    color: #ccc;
+    font-size: 14px;
+    text-align: center;
 }
 
 .mixGrids .gridItem,
@@ -57,7 +97,6 @@
     background: #1f1f1f;
     /* margin-top: 10px; */
     margin-bottom: 20px;
-    height: 200px;
     overflow: hidden;
     /* border-radius: 5px; */
     /*display: none; <-- uncomment this rule for use with MixItUp */
